@@ -1,0 +1,59 @@
+### Get Home Route
+GET http://localhost:3000
+
+### Add user to the DB
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "Asrar Ahmed",
+  "email": "asrar.doe@example.com",
+  "password": "asrar123"
+}
+
+### Add user to the DB
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "password": "securePassword123"
+}
+
+### User login
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "asrar.doe@example.com",
+  "password": "asrar123"
+}
+
+### List out all the users
+
+GET http://localhost:3000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhc3Jhci5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3Mzc3NDgzMzMsImV4cCI6MTczNzc1MTkzM30.4EhSyph4SthZWuk0lrNjNe-l0mpLtqUBSYOhYzR2VRg
+
+### Sort and search the user
+
+GET http://localhost:3000/api/users?page=1&limit=5&search=As
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhc3Jhci5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3Mzc3NDgzMzMsImV4cCI6MTczNzc1MTkzM30.4EhSyph4SthZWuk0lrNjNe-l0mpLtqUBSYOhYzR2VRg
+
+### Update User
+PUT http://localhost:3000/api/users/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhc3Jhci5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3Mzc3NDgzMzMsImV4cCI6MTczNzc1MTkzM30.4EhSyph4SthZWuk0lrNjNe-l0mpLtqUBSYOhYzR2VRg
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john.updated@example.com",
+  "password": "newpassword12345"
+}
+
+### Delete User
+DELETE http://localhost:3000/api/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhc3Jhci5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE3Mzc3NDgzMzMsImV4cCI6MTczNzc1MTkzM30.4EhSyph4SthZWuk0lrNjNe-l0mpLtqUBSYOhYzR2VRg
+
