@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const userRoutes = require("./routes/userRoutes");
+const userRoutes = require("../routes/userRoutes");
 const { Sequelize } = require("sequelize");
 
 dotenv.config();
@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const sequelize = require("./config/db");
+const sequelize = require("../config/db");
 
 sequelize
   .authenticate()
@@ -31,8 +31,8 @@ app.get("/", (req, res) => {
 // Route for Users
 app.use("/api/users", userRoutes);
 
-const authenticate = require("./middlewares/auth");
-const User = require("./models/User");
+const authenticate = require("../middlewares/auth");
+const User = require("../models/User");
 
 app.get("/api/users", authenticate, async (req, res) => {
   const { page = 1, limit = 10, search = "" } = req.query;
